@@ -253,3 +253,4 @@ cython_debug/
 
 # The whole .idea folder
 .idea/
+logs/
