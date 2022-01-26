@@ -16,3 +16,5 @@ class Config:
     ADMINS = ['cespenar1@gmail.com']
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'pl']
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
+    MS_TRANSLATOR_LOCATION = 'global'

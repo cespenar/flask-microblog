@@ -26,7 +26,7 @@
         {% if title %}
             <title>{{ title }} - Microblog</title>
         {% else %}
-            <title>{{ _('Welcome to Microblog!')}}</title>
+            <title>{{ _('Welcome to Microblog!') }}</title>
         {% endif %}
     {% endblock %}
 </head>
@@ -84,6 +84,22 @@
     {{ bootstrap.load_js() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
+
+    <!-- Posts translation -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        function translate(sourceElem, destElem, sourceLang, destLang) {
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate', {
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function (response) {
+                $(destElem).text(response['text'])
+            }).fail(function () {
+                $(destElem).text("{{ _('Error: Could not contact server.') }}");
+            });
+        }
+    </script>
 {% endblock %}
 </body>
 
