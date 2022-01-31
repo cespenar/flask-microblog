@@ -1,6 +1,10 @@
 import os
+from pathlib import Path
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+from dotenv import load_dotenv
+
+basedir = Path(__file__).parent.resolve()
+load_dotenv(basedir.joinpath('.env'))
 
 
 class Config:
@@ -17,4 +21,4 @@ class Config:
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'pl']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
-    MS_TRANSLATOR_LOCATION = 'global'
+    MS_TRANSLATOR_LOCATION = os.environ.get('MS_TRANSLATOR_LOCATION')
