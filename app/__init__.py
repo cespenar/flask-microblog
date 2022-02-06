@@ -10,11 +10,13 @@ from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from opensearchpy import OpenSearch
 
 from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
@@ -24,6 +26,9 @@ mail = Mail(app)
 bootstrap = Bootstrap5(app)
 moment = Moment(app)
 babel = Babel(app)
+
+opensearch = OpenSearch(app.config['OPENSEARCH_URL']) \
+    if app.config['OPENSEARCH_URL'] else None
 
 if not app.debug:
     if app.config['MAIL_SERVER']:

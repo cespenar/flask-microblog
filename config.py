@@ -22,3 +22,4 @@ class Config:
     LANGUAGES = ['en', 'pl']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     MS_TRANSLATOR_LOCATION = os.environ.get('MS_TRANSLATOR_LOCATION')
+    OPENSEARCH_URL = os.environ.get('OPENSEARCH_URL')

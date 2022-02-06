@@ -1,3 +1,4 @@
+from flask import request
 from flask_babel import _, lazy_gettext as _l
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, BooleanField, SubmitField,
@@ -21,7 +22,7 @@ class RegistrationForm(FlaskForm):
     password = PasswordField(_l('Password'), validators=[DataRequired()])
     password2 = PasswordField(_l('Repeat Password'),
                               validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Register')
+    submit = SubmitField(_l('Register'))
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
@@ -71,3 +72,14 @@ class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'),
                          validators=[DataRequired(), Length(min=1, max=140)])
     submit = SubmitField(_l('Submit'))
+
+
+class SearchForm(FlaskForm):
+    q = StringField(_('Search'), validators=[DataRequired()])
+
+    def __init__(self, *args, **kwargs):
+        if 'formdata' not in kwargs:
+            kwargs['formdata'] = request.args
+        if 'meta' not in kwargs:
+            kwargs['meta'] = {'csrf': False}
+        super(SearchForm, self).__init__(*args, **kwargs)
