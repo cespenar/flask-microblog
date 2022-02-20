@@ -9,8 +9,9 @@ load_dotenv(basedir.joinpath('.env'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL') or f"sqlite:///{os.path.join(basedir, 'app.db')}"
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace(
+        'postgres://',
+        'postgresql://') or f"sqlite:///{os.path.join(basedir, 'app.db')}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
@@ -23,3 +24,4 @@ class Config:
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     MS_TRANSLATOR_LOCATION = os.environ.get('MS_TRANSLATOR_LOCATION')
     OPENSEARCH_URL = os.environ.get('OPENSEARCH_URL')
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
