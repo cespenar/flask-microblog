@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-03-19 18:16+0100\n"
+"POT-Creation-Date: 2022-03-27 20:41+0200\n"
 "PO-Revision-Date: 2022-01-24 11:20+0100\n"
 "Last-Translator: \n"
 "Language: pl\n"
@@ -75,7 +75,7 @@ msgstr "Powtórz hasło"
 msgid "About Me"
 msgstr "O mnie"
 
-#: app/forms.py:54 app/forms.py:68 app/forms.py:74
+#: app/forms.py:54 app/forms.py:68 app/forms.py:74 app/forms.py:91
 msgid "Submit"
 msgstr "Wyślij"
 
@@ -87,6 +87,10 @@ msgstr "Napisz coś"
 #, fuzzy
 msgid "Search"
 msgstr "Szukaj"
+
+#: app/forms.py:89
+msgid "Message"
+msgstr "Wiadomość"
 
 #: app/routes.py:42
 msgid "Your post is now live!"
@@ -151,6 +155,15 @@ msgstr "Nie możesz przestać obserwować siebie samego!"
 msgid "You are not following %(username)s."
 msgstr "Nie obserwujesz %(username)s."
 
+#: app/routes.py:257
+#, fuzzy
+msgid "Your message has been sent."
+msgstr "Twoja wiadomość została wysłana."
+
+#: app/routes.py:259
+msgid "Send message"
+msgstr "Wyślij wiadomość"
+
 #: app/translate.py:10
 msgid "Error: the translation service is not configured."
 msgstr "Błąd: usługa tłumaczenia nie jest skonfigurowana."
@@ -188,15 +201,19 @@ msgstr "Przetłumacz"
 msgid "Welcome to Microblog!"
 msgstr "Witaj na Microblogu!"
 
-#: app/templates/base.html:54
+#: app/templates/base.html:63
 msgid "Login"
 msgstr "Zaloguj się"
 
-#: app/templates/base.html:57
+#: app/templates/base.html:66 app/templates/messages.html:4
+msgid "Messages"
+msgstr "Wiadomości"
+
+#: app/templates/base.html:78
 msgid "Profile"
 msgstr "Profil"
 
-#: app/templates/base.html:59
+#: app/templates/base.html:81
 msgid "Logout"
 msgstr "Wyloguj się"
 
@@ -205,11 +222,13 @@ msgstr "Wyloguj się"
 msgid "Hello, %(username)s!"
 msgstr "Witaj, %(username)s!"
 
-#: app/templates/index.html:22 app/templates/user.html:57
+#: app/templates/index.html:22 app/templates/messages.html:14
+#: app/templates/user.html:65
 msgid "Newer posts"
 msgstr "Nowsze posty"
 
-#: app/templates/index.html:28 app/templates/user.html:63
+#: app/templates/index.html:28 app/templates/messages.html:20
+#: app/templates/user.html:71
 msgid "Older posts"
 msgstr "Starsze posty"
 
@@ -253,6 +272,11 @@ msgstr "Poprzednie wyniki"
 msgid "Next results"
 msgstr "Następne wyniki"
 
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send message to %(recipient)s"
+msgstr "Wyślij wiadomość do %(recipient)s"
+
 #: app/templates/user.html:9
 msgid "User"
 msgstr "Użytkownik"
@@ -264,7 +288,7 @@ msgstr "Ostatnie logowanie"
 #: app/templates/user.html:17 app/templates/user_popup.html:20
 #, python-format
 msgid "%(count)d followers"
-msgstr "Obserwuje Cię %(count)d"
+msgstr "Obserwuje Cię %(count)d"
 
 #: app/templates/user.html:17 app/templates/user_popup.html:21
 #, python-format
@@ -282,6 +306,10 @@ msgstr "Obserwuj"
 #: app/templates/user.html:39 app/templates/user_popup.html:37
 msgid "Unfollow"
 msgstr "Przestań obserwować"
+
+#: app/templates/user.html:47
+msgid "Send private message"
+msgstr "Wyślij prywatną wiadomość"
 
 #~ msgid "Error: Could not contact server."
 #~ msgstr "Błąd: nie udało się nawiązać łączności z serwerem."
