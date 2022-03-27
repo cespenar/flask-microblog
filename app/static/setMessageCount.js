@@ -1,4 +1,5 @@
 function setMessageCount(n) {
-    $('#message_count').text(n);
-    $('#message_count').css('visibility', n ? 'visible' : 'hidden');
+    let count = $('#message_count')
+    count.text(n);
+    count.css('visibility', n ? 'visible' : 'hidden');
 }
