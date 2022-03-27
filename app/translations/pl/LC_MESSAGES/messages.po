@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-02-06 18:36+0100\n"
+"POT-Creation-Date: 2022-03-19 18:16+0100\n"
 "PO-Revision-Date: 2022-01-24 11:20+0100\n"
 "Last-Translator: \n"
 "Language: pl\n"
@@ -83,7 +83,7 @@ msgstr "Wyślij"
 msgid "Say something"
 msgstr "Napisz coś"
 
-#: app/forms.py:78 app/routes.py:234
+#: app/forms.py:78 app/routes.py:242
 #, fuzzy
 msgid "Search"
 msgstr "Szukaj"
@@ -120,33 +120,33 @@ msgstr "Resetuj hasło"
 msgid "Your password has been reset."
 msgstr "Twoje hasło zostało zresetowane."
 
-#: app/routes.py:165
+#: app/routes.py:173
 msgid "Your changes has been saved."
 msgstr "Twoje zmiany zostały zapisane."
 
-#: app/routes.py:170 app/templates/edit_profile.html:6
+#: app/routes.py:178 app/templates/edit_profile.html:6
 msgid "Edit Profile"
 msgstr "Edytuj profil"
 
-#: app/routes.py:181 app/routes.py:201
+#: app/routes.py:189 app/routes.py:209
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Użytkownik %(username)s nie został znaleziony."
 
-#: app/routes.py:184
+#: app/routes.py:192
 msgid "You cannot follow yourself!"
 msgstr "Nie możesz śledzić siebie samego!"
 
-#: app/routes.py:188
+#: app/routes.py:196
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Śledzisz %(username)s!"
 
-#: app/routes.py:204
+#: app/routes.py:212
 msgid "You cannot unfollow yourself!"
 msgstr "Nie możesz przestać obserwować siebie samego!"
 
-#: app/routes.py:208
+#: app/routes.py:216
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Nie obserwujesz %(username)s."
@@ -175,12 +175,12 @@ msgstr "Wystąpił nieoczekiwany błąd."
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr "Administrator został powiadomiony. Przepraszamy za niedogodności!"
 
-#: app/templates/_post.html:14
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s powiedział/a %(when)s"
 
-#: app/templates/_post.html:26
+#: app/templates/_post.html:28
 msgid "Translate"
 msgstr "Przetłumacz"
 
@@ -199,11 +199,6 @@ msgstr "Profil"
 #: app/templates/base.html:59
 msgid "Logout"
 msgstr "Wyloguj się"
-
-#: app/templates/base.html:108
-#, fuzzy
-msgid "Error: Could not contact server."
-msgstr "Błąd: nie udało się nawiązać łączności z serwerem."
 
 #: app/templates/index.html:5
 #, python-format
@@ -262,16 +257,16 @@ msgstr "Następne wyniki"
 msgid "User"
 msgstr "Użytkownik"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:13 app/templates/user_popup.html:16
 msgid "Last seen on"
 msgstr "Ostatnie logowanie"
 
-#: app/templates/user.html:17
+#: app/templates/user.html:17 app/templates/user_popup.html:20
 #, python-format
 msgid "%(count)d followers"
 msgstr "Obserwuje Cię %(count)d"
 
-#: app/templates/user.html:17
+#: app/templates/user.html:17 app/templates/user_popup.html:21
 #, python-format
 msgid "%(count)d following"
 msgstr "śledzisz %(count)d "
@@ -280,11 +275,14 @@ msgstr "śledzisz %(count)d "
 msgid "Edit your profile"
 msgstr "Edytuj swój profil"
 
-#: app/templates/user.html:31
+#: app/templates/user.html:31 app/templates/user_popup.html:29
 msgid "Follow"
 msgstr "Obserwuj"
 
-#: app/templates/user.html:39
+#: app/templates/user.html:39 app/templates/user_popup.html:37
 msgid "Unfollow"
 msgstr "Przestań obserwować"
+
+#~ msgid "Error: Could not contact server."
+#~ msgstr "Błąd: nie udało się nawiązać łączności z serwerem."
 
